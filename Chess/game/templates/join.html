@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join | Concentrate-Chess</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'image/chess.png' %}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #886f63;
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+      }
+
+      .page {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .conatiner {
+        height: 60%;
+        width: 50%;
+        background-color: #f6f6f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 30px;
+      }
+
+      .text-box {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .text-box h1 {
+        font-size: 65px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .text-box h3 {
+        font-size: 15px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .login-form {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 90%;
+        width: 600px;
+        padding: 20px;
+      }
+
+      .form-input {
+        display: flex;
+        background-color: #403f3d;
+        color: #939294;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        padding: 15px 20px;
+        font-size: 1em;
+        outline: none;
+        transition: border-color 0s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+
+      .form-input::placeholder {
+        color: #939294;
+      }
+
+      .form-input:focus {
+        background-color: #f6f6f4;
+        border-color: #886f63;
+        box-shadow: 0 0 8px rgba(147, 146, 148, 0.5);
+      }
+
+      .submit-button {
+        align-self: center;
+        width: 300px;
+        background-color: #886f63;
+        color: #f6f6f4;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        text-decoration: none;
+        padding: 15px 20px;
+        font-size: 1.1em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+
+      .submit-button:hover {
+        background-color: #9b806f;
+        transform: translateY(-2px);
+      }
+
+      .submit-button:active {
+        background-color: #7a6659;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="conatiner">
+        <div class="text-box">
+          <h1>JOIN</h1>
+          <h3>CONCENTRATE CHESS</h3>
+        </div>
+        <div class="form">
+          <div class="form">
+            <form class="login-form" action="{% url 'join' %}" method="post">
+              {% csrf_token %}
+              <input
+                type="text"
+                placeholder="Enter your username"
+                class="form-input"
+                name="username"
+              />
+              <button type="submit" class="submit-button">PLAY NOW!</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

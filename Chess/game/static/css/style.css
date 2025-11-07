@@ -1,0 +1,243 @@
+body {
+    background-color: #403f3d;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body{
+color: #403f3d;
+color: #886f63;
+color: #939294;
+color: #f4f4f6;
+}
+
+.resetButton{
+    display: inline-block;
+    background: #886f63;
+    font-size: 1.125rem;
+    padding: 1em 2em;
+    color: #f4f4f6;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 12px;
+}
+.resetButton:hover{
+    background: #939294
+}
+.resetButton a{
+    color: #f4f4f6;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.selected {
+    background-color: red;
+}
+
+.recentlyMoved{
+    background-color: yellow;
+}
+
+.uiNum {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    font-size: 14px;
+    color: black;
+}
+
+.uiLet {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    font-size: 14px;
+    color: black;
+}
+
+.piece-img {
+    width: 65px;
+    height: 65px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+.piece-img:hover {
+    transform: scale(1.1);
+}
+
+/*
+.possible-moves {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(144, 238, 144, 0.7);
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.possible-moves:hover{
+    transform: scale(1.5);
+    cursor: pointer;
+
+}   
+.capture-moves {
+    width: 65px;
+    height: 65px;
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.capture-moves:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+
+}
+*/
+
+.difContainer{
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.chessboard {
+    width: 638px;
+    height: 638px;
+    margin: 20px;
+    align-items: center;
+    border-radius: 5px;
+    border: 10px solid #403f3d;
+}
+.square {
+    width: 79.75px;
+    height: 79.75px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    font-size: 0px;
+}
+.light {
+    background: #f4f4f6;
+}
+.dark {
+    background: #886f63;
+}
+
+.status-bar-container{
+    width: 640px;
+    height: 640px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.logo{
+    height: 225px;
+    width: 225px;
+    background-color: #f4f4f6;
+    border-radius: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.status-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.captured-pieces h2 {
+    margin-right: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #403f3d;
+
+}
+.captured-pieces {
+    height: 95px;
+    background-color: #f4f4f6;
+    width: 480px;
+    display: flex;
+    align-items: center;
+}
+.captured-piece {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+}
+.captured-piece img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.turns {
+    color: white;
+}
+
+
+.popup .overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: none;
+}
+.popup .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    width: 500px;
+    height: 250px;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+.popup .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: #706D54;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.popup.active .overlay {
+    display: block;
+}
+.popup.active .content {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
