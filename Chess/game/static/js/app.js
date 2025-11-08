@@ -11,9 +11,9 @@ async function createBoard() {
     // Update turn display
     const turns = document.getElementById('turns');
       if (window.turn) {
-          turns.innerText = "⚪";
+          turns.innerText = "White's Turn ⚪";
       } else {
-          turns.innerHTML = "⚫";
+          turns.innerText = "Black's Turn ⚫";
       }
 
 

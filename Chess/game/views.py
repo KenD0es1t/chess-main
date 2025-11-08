@@ -156,11 +156,3 @@ def board(request):
             return JsonResponse(newRs)
     
         return JsonResponse(jsResponseInfo)
-    if request.method =='POST':
-        playColor = request.POST.get('mySelect')
-        if playColor == 'white':
-            request.session['aiColor'] = False
-        elif playColor == 'black':
-            request.session['aiColor'] = True
-        
-        return redirect('playAI')

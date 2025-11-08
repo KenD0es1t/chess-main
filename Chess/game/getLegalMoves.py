@@ -61,9 +61,5 @@ def getLegalMoves(pieceCoordinates,board,**kwargs):
             moves = kingMoves  
             
         if castleMoves != None:
-            if moves != []:
-                moves += castleMoves
-            else:
-                moves = castleMoves
-
+            moves+=(castleMoves)
     return moves

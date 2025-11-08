@@ -127,11 +127,14 @@ def isPinned(pieceCoordinates, color, board):
                 break
         if kingCords:
             break
+        
 
     # check from all directions if there is an attacking piece on a straight line
     directions = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (1, -1), (-1, 1), (-1, -1)]
+    print(kingCords)
 
     for direction in directions:
+        print(direction)
         row, col = int(kingCords[0]) + direction[0], int(kingCords[1]) + direction[1]
         while 0 <= row < 8 and 0 <= col < 8:
             if board[row][col]:
@@ -146,9 +149,9 @@ def isPinned(pieceCoordinates, color, board):
                             for move in moves:
                                 moveY = int(move[0])
                                 moveX = int(move[1])
-                                if moveY == int(kingCords[0]) and moveY == row:
+                                if moveY == int(kingCords[0]):
                                     availableMoves.append(move)
-                                if moveX == int(kingCords[1]) and moveX == col:
+                                if moveX == int(kingCords[1]):
                                     availableMoves.append(move)
 
                     if direction in [(1, 1), (1, -1), (-1, 1), (-1, -1)] and (attacker == 'b' or attacker == 'q'):
